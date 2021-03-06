@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
 
   def index
-    #@article = Article.order(created_at: :desc) #по добавлению начиная с новых статей
-    @article = Article.all
+    #@articles = Article.order(created_at: :desc) #по добавлению начиная с новых статей
+    @articles = Article.all
   end
 
   def show
