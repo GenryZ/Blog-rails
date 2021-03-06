@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
 
+  def index
+    #@article = Article.order(created_at: :desc) #по добавлению начиная с новых статей
+    @article = Article.all
+  end
+
   def show
     @article = Article.find(params[:id])
   end
