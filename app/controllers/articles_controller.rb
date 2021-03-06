@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
 
-  def new
+  def new #возвращает в браузер форму new.html.erb
   end
   
   def create 
-    render plain: params[:article].inspect
+    render plain: params[:article]
   end
 
 end
