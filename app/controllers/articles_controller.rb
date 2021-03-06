@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
     if @article.valid?
       @article.save
+      redirect_to @article #от двойного сабмита защита
     else
       render action: 'new'#возвращает def new
     end
