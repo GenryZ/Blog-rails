@@ -44,6 +44,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+#Удаление статьи. (Нужно улучшить. Сейчас лишь вызывает дилоговое окно в js.)
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to action: 'index'
+  end
 
   private
 
