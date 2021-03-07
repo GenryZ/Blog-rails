@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
      if @article.update(article_params)
         redirect_to @article 
     else
-      render action: 'edit'
+      render action: 'edit' #рендер возвращает данные 
     end
   end
 
@@ -50,6 +50,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to action: 'index'
+    #второй вариате
+    #redirect_to articles_path
   end
 
   private
