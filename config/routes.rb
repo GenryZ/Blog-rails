@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resource :contacts, only: [:new, :create], path_names: {:new => ''} #only это хэш, new и create то что хотим оставить
                                             #delete, put, update  не будут создаваться
                                             #эти маршруты routes
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
+
 
 end
