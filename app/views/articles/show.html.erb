@@ -20,12 +20,17 @@
 
 <h2>Some comments</h2>
 <% @article.comments.each do |comment| %>
+<hr />
 	<p>
-		<strong>Author:</strong>
+		<!-- <strong>Author:</strong> -->
+		Written by: 
 		<%= comment.author %>
+		in
+		<%= comment.created_at %>
 	</p>
 	<p>
-		<strong>Comment:</strong>
+		<!-- <strong>Comment:</strong> -->
 		<%= comment.body %>
 	</p>
 <% end %>
+ <a href="/articles">Back to articles</a>
