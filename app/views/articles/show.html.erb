@@ -1,5 +1,23 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.text %></p>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+<hr />
+	<p>
+		<strong><i><%= comment.author %> : </i></strong>
+		
+		<%= comment.created_at %>
+	</p>
+	<p>
+		<!-- <strong>Comment:</strong> -->
+		<%= comment.body %>
+	</p>
+
+<% end %>
+<hr/>
+<a href="/articles">Back to articles</a>
+<h2>Add comments</h2>
 <p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
 	<p>
@@ -18,18 +36,5 @@
 <% end %>
 </p>
 
-<h2>Some comments</h2>
-<% @article.comments.each do |comment| %>
-<hr />
-	<p>
-		<!-- <strong>Author:</strong> -->
-		<%= comment.author  %>
-		
-		<%= comment.created_at %>
-	</p>
-	<p>
-		<!-- <strong>Comment:</strong> -->
-		<%= comment.body %>
-	</p>
-<% end %>
- <a href="/articles">Back to articles</a>
+
+ 
