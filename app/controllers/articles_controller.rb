@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-
+  before_action :authenticate_user!
 #Показывает список всех статей
 
   def index
