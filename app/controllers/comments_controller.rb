@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, :only => [:create]
   def create
     @article = Article.find(params[:article_id])
-    @article.comments.create(comment_params)
-    
+    @comm = @article.comments.new(comment_params)
+    @comm.author = current_user.username
+    @comm.save
     redirect_to article_path(@article)
   end
 
