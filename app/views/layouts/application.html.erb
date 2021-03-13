@@ -12,17 +12,45 @@
   </head>
   <body>
     <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/articles">Articles</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/articles/new">New Articles</a>
+                </li>
+            </ul>
+            <div class="d-flex bd-highlight">
+              <div class="p-2 flex-fill bd-highlight"></div>
+              <div class="p-2 flex-fill bd-highlight"></div>
+              <div class="p-2 flex-fill bd-highlight">
+              <% if user_signed_in? %>
+                Welcome, <strong><%= current_user.username %></strong> | <%= link_to '<button type="button" class="btn btn-warning">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
+              <% else %>
+              <%= link_to '<button type="button" class="btn btn-primary">Sign In</button>'.html_safe, new_user_session_path %> 
+              <% end %>
+              </div>
+               </div>
+             </div>
+          </nav>
+      </div>
 
-    <% if user_signed_in? %>
-   Welcome, <strong><%= current_user.username %></strong> | <%= link_to '<button type="button" class="btn btn-warning">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
-    <% else %>
-    <%= link_to '<button type="button" class="btn btn-primary">Sign In</button>'.html_safe, new_user_session_path %> 
-    <% end %>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </div>
+
+  
+  
+
   </body>
 </html>

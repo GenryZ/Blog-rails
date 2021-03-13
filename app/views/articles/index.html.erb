@@ -1,3 +1,4 @@
+<div class="container">
 <h1>List of articles:</h1>
 
 
@@ -15,12 +16,6 @@
 	<%= link_to '<button type="button" class="btn btn-danger">Delete</button>'.html_safe, article_path(article), method: :delete, data: {confirm: "Are you sure?"} %> 
 </div>
 </p>
-
-
-<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  <button type="button" class="btn btn-success">Show</button>
-  <button type="button" class="btn btn-warning">Edit</button>
-  <button type="button" class="btn btn-danger">Delete</button>
-</div>
 <hr />
 <% end %>
+</div>
