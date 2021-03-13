@@ -14,7 +14,7 @@
     <div class="container">
 
     <% if user_signed_in? %>
-   Welcome, <%= current_user.username %> | <%= link_to '<button type="button" class="btn btn-warning">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
+   Welcome, <strong><%= current_user.username %></strong> | <%= link_to '<button type="button" class="btn btn-warning">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
     <% else %>
     <%= link_to '<button type="button" class="btn btn-primary">Sign In</button>'.html_safe, new_user_session_path %> 
     <% end %>
