@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
   def create 
     @article = Article.new(article_params)
     
+    
     if @article.valid?
       @article.save
       redirect_to @article #от двойного сабмита защита
